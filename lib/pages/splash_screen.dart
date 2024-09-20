@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_doctor/components/logo_icon.dart';
+import 'package:my_doctor/widgets/logo_icon.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
