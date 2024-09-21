@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_doctor/theme.dart';
 import 'package:my_doctor/widgets/logo_icon.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -25,17 +26,18 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   const LogoIcon(),
                   const SizedBox(height: 40),
-                  const Text(
+                  Text(
                     'Masuk dan mulai\nberkonsultasi',
-                    style: TextStyle(
+                    style: font_semibold.copyWith(
                       fontSize: 20,
-                      fontWeight: FontWeight.w600,
+                      color: textPrimaryColor,
                     ),
                   ),
                   const SizedBox(height: 40),
+                  // USERNAME
                   const Text(
                     'Username ',
-                    style: TextStyle(color: Color(0xff7D8797)),
+                    style: TextStyle(color: textSecondaryColor),
                   ),
                   const SizedBox(height: 5),
                   TextField(
@@ -44,14 +46,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       labelText: '',
                       enabledBorder: OutlineInputBorder(
                         borderSide: const BorderSide(
-                          color: Color(0xffE9E9E9),
+                          color: borderColor,
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       focusedBorder: const OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: Color(0xffE9E9E9),
+                          color: borderColor,
                           width: 1,
                         ),
                       ),
@@ -61,7 +63,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   // PASSWORD
                   const Text(
                     'Password',
-                    style: TextStyle(color: Color(0xff7D8797)),
+                    style: TextStyle(color: textSecondaryColor),
                   ),
                   const SizedBox(height: 5),
                   TextField(
@@ -72,14 +74,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       labelText: '',
                       enabledBorder: OutlineInputBorder(
                         borderSide: const BorderSide(
-                          color: Color(0xffE9E9E9),
+                          color: borderColor,
                           width: 1,
                         ),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       focusedBorder: const OutlineInputBorder(
                         borderSide: BorderSide(
-                          color: Color(0xffE9E9E9),
+                          color: borderColor,
                           width: 1,
                         ),
                       ),
@@ -93,6 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       style: TextStyle(
                         decoration: TextDecoration.underline,
                         fontSize: 12,
+                        color: textSecondaryColor,
                       ),
                     ),
                   ),
@@ -103,7 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.all(10),
-                        backgroundColor: const Color(0xff0BCAD4),
+                        backgroundColor: primaryColor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -111,7 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: const Text(
                         'Login',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: whiteColor,
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
                         ),
@@ -127,6 +130,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: TextStyle(
                           decoration: TextDecoration.underline,
                           fontSize: 16,
+                          color: textSecondaryColor,
                         ),
                       ),
                     ),
