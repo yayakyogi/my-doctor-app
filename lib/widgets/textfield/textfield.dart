@@ -6,10 +6,12 @@ class TextfieldWidget extends StatefulWidget {
     super.key,
     required this.label,
     required this.controller,
+    this.type = "text",
   });
 
   final String label;
   final TextEditingController controller;
+  final String type;
 
   @override
   State<TextfieldWidget> createState() => _TextfieldWidgetState();
@@ -25,6 +27,12 @@ class _TextfieldWidgetState extends State<TextfieldWidget> {
         const SizedBox(height: 5),
         TextField(
           controller: widget.controller,
+          keyboardType: widget.type == "email"
+              ? TextInputType.emailAddress
+              : widget.type == "password"
+                  ? TextInputType.visiblePassword
+                  : TextInputType.text,
+          obscureText: widget.type == "password",
           decoration: InputDecoration(
             labelText: '',
             enabledBorder: OutlineInputBorder(

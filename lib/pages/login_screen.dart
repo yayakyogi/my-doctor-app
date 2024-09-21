@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_doctor/pages/register_screen.dart';
 import 'package:my_doctor/theme.dart';
 import 'package:my_doctor/widgets/button/button.dart';
 import 'package:my_doctor/widgets/button/button_link.dart';
@@ -45,6 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   TextfieldWidget(
                     label: 'Password',
                     controller: _passwordController,
+                    type: "password",
                   ),
                   const SizedBox(height: 10),
                   ButtonLinkWidget(label: 'Forgot My Password', onClick: () {}),
@@ -57,7 +59,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   Center(
                     child: ButtonLinkWidget(
                       label: 'Create New Account',
-                      onClick: () {},
+                      onClick: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const RegisterScreen(),
+                          ),
+                        );
+                      },
                     ),
                   )
                 ],

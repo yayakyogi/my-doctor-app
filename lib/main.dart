@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_doctor/pages/home_screen.dart';
 import 'package:my_doctor/pages/login_screen.dart';
+import 'package:my_doctor/pages/register_screen.dart';
 import 'package:my_doctor/pages/splash_screen.dart';
 
 void main() {
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home': (context) => const HomeScreen(),
         '/login': (context) => const LoginScreen(),
+        '/register': (context) => const RegisterScreen(),
       },
     );
   }
