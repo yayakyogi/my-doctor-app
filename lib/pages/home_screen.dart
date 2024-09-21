@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:my_doctor/pages/login_screen.dart';
+import 'package:my_doctor/pages/register_screen.dart';
+import 'package:my_doctor/theme.dart';
+import 'package:my_doctor/widgets/button/button.dart';
 import 'package:my_doctor/widgets/logo_icon.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -37,42 +41,38 @@ class HomeScreen extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xff0BCAD4),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
+                    ButtonWidget(
+                      label: "Get Started",
+                      onClick: () {
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const RegisterScreen(),
                           ),
-                        ),
-                        child: const Text(
-                          'Get Started',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ),
+                        );
+                      },
                     ),
                     const SizedBox(height: 8),
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: () {
-                          Navigator.pushReplacementNamed(context, '/login');
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const LoginScreen(),
+                            ),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
+                          padding: const EdgeInsets.all(10),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
-                        child: const Text(
+                        child: Text(
                           'Sign In',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                          ),
+                          style: font_semibold.copyWith(fontSize: 18),
                         ),
                       ),
                     )

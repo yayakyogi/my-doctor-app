@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_doctor/pages/login_screen.dart';
 import 'package:my_doctor/theme.dart';
 import 'package:my_doctor/widgets/button/button.dart';
 import 'package:my_doctor/widgets/textfield/textfield.dart';
@@ -98,7 +99,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: textPrimaryColor),
-          onPressed: () => Navigator.of(context).pop(),
+          onPressed: () => Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const LoginScreen(),
+            ),
+          ),
         ),
         title: Text(
           'Daftar Akun',

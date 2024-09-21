@@ -37,10 +37,9 @@ class _ButtonWidgetState extends State<ButtonWidget> {
         ),
         child: Text(
           widget.label,
-          style: TextStyle(
+          style: font_semibold.copyWith(
             color: widget.isPrimary ? whiteColor : textSecondaryColor,
             fontSize: 18,
-            fontWeight: FontWeight.w600,
           ),
         ),
       ),
