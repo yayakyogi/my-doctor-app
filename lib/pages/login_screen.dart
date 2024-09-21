@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:my_doctor/theme.dart';
+import 'package:my_doctor/widgets/button/button.dart';
+import 'package:my_doctor/widgets/button/button_link.dart';
 import 'package:my_doctor/widgets/logo_icon.dart';
+import 'package:my_doctor/widgets/textfield/textfield.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -34,105 +37,27 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   const SizedBox(height: 40),
-                  // USERNAME
-                  const Text(
-                    'Username ',
-                    style: TextStyle(color: textSecondaryColor),
-                  ),
-                  const SizedBox(height: 5),
-                  TextField(
+                  TextfieldWidget(
+                    label: 'Username',
                     controller: _usernameController,
-                    decoration: InputDecoration(
-                      labelText: '',
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: borderColor,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: borderColor,
-                          width: 1,
-                        ),
-                      ),
-                    ),
                   ),
                   const SizedBox(height: 20),
-                  // PASSWORD
-                  const Text(
-                    'Password',
-                    style: TextStyle(color: textSecondaryColor),
-                  ),
-                  const SizedBox(height: 5),
-                  TextField(
+                  TextfieldWidget(
+                    label: 'Password',
                     controller: _passwordController,
-                    keyboardType: TextInputType.visiblePassword,
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      labelText: '',
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
-                          color: borderColor,
-                          width: 1,
-                        ),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      focusedBorder: const OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: borderColor,
-                          width: 1,
-                        ),
-                      ),
-                    ),
                   ),
                   const SizedBox(height: 10),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      'Forgot My Password',
-                      style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        fontSize: 12,
-                        color: textSecondaryColor,
-                      ),
-                    ),
-                  ),
+                  ButtonLinkWidget(label: 'Forgot My Password', onClick: () {}),
                   const SizedBox(height: 40),
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        padding: const EdgeInsets.all(10),
-                        backgroundColor: primaryColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      child: const Text(
-                        'Login',
-                        style: TextStyle(
-                          color: whiteColor,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
+                  ButtonWidget(
+                    label: 'Login',
+                    onClick: () {},
                   ),
                   const SizedBox(height: 30),
                   Center(
-                    child: TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'Create new account',
-                        style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          fontSize: 16,
-                          color: textSecondaryColor,
-                        ),
-                      ),
+                    child: ButtonLinkWidget(
+                      label: 'Create New Account',
+                      onClick: () {},
                     ),
                   )
                 ],
