@@ -6,12 +6,14 @@ class TextfieldWidget extends StatefulWidget {
     super.key,
     required this.label,
     required this.controller,
-    this.type = "text",
+    required this.validator,
+    this.type,
   });
 
   final String label;
   final TextEditingController controller;
-  final String type;
+  final FormFieldValidator<String> validator;
+  final String? type;
 
   @override
   State<TextfieldWidget> createState() => _TextfieldWidgetState();
@@ -25,8 +27,9 @@ class _TextfieldWidgetState extends State<TextfieldWidget> {
       children: [
         Text(widget.label, style: const TextStyle(color: textSecondaryColor)),
         const SizedBox(height: 5),
-        TextField(
+        TextFormField(
           controller: widget.controller,
+          validator: widget.validator,
           keyboardType: widget.type == "email"
               ? TextInputType.emailAddress
               : widget.type == "password"
@@ -36,11 +39,20 @@ class _TextfieldWidgetState extends State<TextfieldWidget> {
           decoration: InputDecoration(
             labelText: '',
             enabledBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: borderColor, width: 1),
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(20),
+              borderSide: const BorderSide(color: borderColor),
             ),
-            focusedBorder: const OutlineInputBorder(
-              borderSide: BorderSide(color: borderColor, width: 1),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: const BorderSide(color: borderColor),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: const BorderSide(color: dangerColor),
+            ),
+            focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: const BorderSide(color: dangerColor),
             ),
           ),
         ),
